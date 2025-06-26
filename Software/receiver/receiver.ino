@@ -1,12 +1,33 @@
+/*******************************************************************************
+ * @file    receiver.ino
+ * @author  Do Duc Nghia
+ * @brief   Receiver Device receive signal and do functions
+ * @details This file is written for config the receiving device. Receive signal
+ *          and do alarming functions.
+ *
+ * @version 1.0
+ * @date    2024-11-17
+ * *****************************************************************************
+ */
+
+/********************************************************************
+ * ====================== [ INCLUDE LIBRARY ] =======================
+ ********************************************************************/
 #include <WiFi.h>
 #include <BlynkSimpleEsp32.h>
 #include <WiFiManager.h>
 #include <HTTPClient.h>
 
+/********************************************************************
+ * ======================= [ BLYNK CONFIG ] =========================
+ ********************************************************************/
 #define BLYNK_TEMPLATE_ID "TMPL60vHn9oDu"
 #define BLYNK_TEMPLATE_NAME "THIET BI CANH BAO NHAN"
 #define BLYNK_AUTH_TOKEN "PKB8ONZBg_DMCIc0rCRDAOhvsH_wqEfF"
 
+/********************************************************************
+ * ========================= [ CODING ] =============================
+ ********************************************************************/
 // Hàm lấy dữ liệu từ ESP8266 thông qua Blynk Cloud
 String getBlynkValue(String token, String pin)
 {
@@ -127,7 +148,7 @@ void loop()
   Serial.print("Buzzer: ");
   Serial.println(digitalRead(buzzer) ? "BẬT" : "TẮT");
   Serial.println("==========================");
-  delay(1000); // Độ trễ 1 giây
+  delay(1000);
 }
 
 // Hàm điều khiển buzzer

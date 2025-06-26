@@ -1,15 +1,35 @@
+/*******************************************************************************
+ * @file    sender.ino
+ * @author  Do Duc Nghia
+ * @brief   Sender Device detect lock
+ * @details This file is written for config the sender device. Detect Lock and
+ *          send the signal to the receiver via HTTP, Blynk.
+ *
+ * @version 1.0
+ * @date    2024-11-15
+ * *****************************************************************************
+ */
 
-
+/********************************************************************
+ * ======================= [ BLYNK CONFIG ] =========================
+ ********************************************************************/
 #define BLYNK_TEMPLATE_ID "TMPL6w6NBriV1"
 #define BLYNK_TEMPLATE_NAME "THIET BI CANH BAO GUI"
 #define BLYNK_AUTH_TOKEN "t51NitTmbqL0ZIQSce6630sdXghh_gnT"
 
+/********************************************************************
+ * ====================== [ INCLUDE LIBRARY ] =======================
+ ********************************************************************/
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 #include <WiFiManager.h>
 
+/********************************************************************
+ * ========================= [ CODING ] =============================
+ ********************************************************************/
+
 // Khai báo chân cảm biến
-const int cambien = D8; // Cảm biến
+const int cambien = D8;
 int lastSensorValue = -1;
 
 void setup()
@@ -35,7 +55,7 @@ void setup()
   Serial.print("Địa chỉ IP ESP8266: ");
   Serial.println(WiFi.localIP());
 
-  pinMode(cambien, INPUT); // Thiết lập chân cảm biến làm input
+  pinMode(cambien, INPUT);
 }
 
 void loop()
@@ -55,5 +75,5 @@ void loop()
     Serial.println(sensorValue ? "HIGH" : "LOW");
   }
 
-  delay(500); // Trễ 500ms trước khi đọc lại
+  delay(500);
 }
