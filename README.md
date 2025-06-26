@@ -52,8 +52,7 @@ If the system detects that the lock is **not engaged**, it will:
 ## 📸 Demo
 
 <!-- Replace with image or GIF later -->
-> [Insert image of prototype here]  
-> [Insert short demo video/GIF]
+![Device Image](Documents/Device_Picture.jpg) 
 
 ## 📍 Project Status
 
